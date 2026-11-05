@@ -1,4 +1,5 @@
 #include <QtGlobal>
+#include <QGuiApplication>
 
 #include "kiwixapp.h"
 #include "useragent.h"
@@ -71,6 +72,7 @@ int main(int argc, char *argv[])
     // launched (see kiwix/libkiwix#1364).
     shareUserAgentWithLibkiwix();
 
+    QGuiApplication::setDesktopFileName(QStringLiteral("org.kiwix.desktopapp"));
     KiwixApp a(argc, argv);
 
     QCommandLineParser parser;
